@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    
+    ports:
+      - "8000:8000" 
+      
+    container_name: customer_api_service_compose
+    
+    volumes:
+      - ./app:/app/app
+      - ./data:/app/data
