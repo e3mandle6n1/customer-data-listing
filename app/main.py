@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Query
-from typing import Optional
+from typing import Optional, List
 from contextlib import asynccontextmanager
 from . import data_handler, schemas
 
@@ -35,3 +35,10 @@ def read_customers(
         is_active=isActive, country_code=countryCode,
         sort_by=sortBy, sort_direction=sortDirection,
     )
+
+@app.get("/api/countries", response_model=List[str])
+def read_countries():
+    """
+    Retrieves a list of unique country codes from the customer data.
+    """
+    return data_handler.get_all_countries()

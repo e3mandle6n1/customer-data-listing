@@ -1,6 +1,6 @@
 import pandas as pd
 from slugify import slugify
-from typing import Optional
+from typing import Optional, List
 from . import schemas
 
 customer_df = pd.DataFrame()
@@ -68,3 +68,14 @@ def get_customers(
     customers_data = paginated_df.to_dict(orient='records')
     
     return schemas.PaginatedCustomerResponse(total_count=total_count, customers=customers_data)
+
+def get_all_countries() -> List[str]:
+    """
+    Retrieves a sorted, unique list of country codes from the customer data.
+    """
+    if customer_df.empty:
+        return []
+    # Extract unique country codes
+    unique_countries = customer_df['countrycode'].unique()
+
+    return sorted(list(unique_countries))
