@@ -12,3 +12,7 @@ class Customer(BaseModel):
 
     class Config:
         from_attributes = True # Allows Pydantic to read data from objects
+
+class PaginatedCustomerResponse(BaseModel):
+    total_count: int
+    customers: List[Customer]
