@@ -4,6 +4,7 @@ This repository contains the backend API for a customer data listing service. It
 
 [![Python Version](https://img.shields.io/badge/python-3.9-blue.svg)](https://www.python.org/downloads/release/python-390/)
 [![Framework](https://img.shields.io/badge/framework-FastAPI-green.svg)](https://fastapi.tiangolo.com/)
+[![Swagger](https://img.shields.io/badge/Swagger-85EA2D?logo=insomnia&logoColor=000)](#)
 [![Docker](https://img.shields.io/badge/container-Docker-blue.svg)](https://www.docker.com/)
 
 ---
